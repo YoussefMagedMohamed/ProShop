@@ -1,9 +1,8 @@
 import "./App.css";
-import { Container } from "react-bootstrap";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./Components/Home/Home";
 import Layout from "./Components/Layout/Layout";
-import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import Home from "./Screens/Home/Home";
+import ProductDetails from "./Screens/ProductDetails/ProductDetails";
 
 let routers = createBrowserRouter([
   {path:"/", element: <Layout/> , children: [
