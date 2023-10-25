@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Product from "../../Components/Product/Product";
 import { getAllProducts } from "../../Components/Apis/Apis";
+import Loading from "../../Components/Loading/Loading";
 
 const Home = () => {
 
@@ -19,7 +20,8 @@ const Home = () => {
 
   return (
     <>
-      <h1>Latest Products</h1>
+      {product.length > 0 ? (<>
+        <h1>Latest Products</h1>
       <Row>
         {product.map((product, index) => (
           <Col sm={12} md={6} lg={4} xl={3} key={index}>
@@ -27,6 +29,7 @@ const Home = () => {
           </Col>
         ))}
       </Row>
+      </>) : <Loading/>}
     </>
   );
 };
