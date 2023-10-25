@@ -1,20 +1,20 @@
 import "./App.css";
-import Footer from "./Components/Footer/Footer";
-import Header from "./Components/Header/Header";
 import { Container } from "react-bootstrap";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./Components/Home/Home";
+import Layout from "./Components/Layout/Layout";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
+
+let routers = createBrowserRouter([
+  {path:"/", element: <Layout/> , children: [
+    {index: true , element: <Home/>} ,
+    {path: "/productDetails/:id" , element: <ProductDetails/>} ,
+  ]}
+])
 
 function App() {
   return (
-    <>
-      <Header />
-      <main className="py-3">
-        <Container>
-          <Home/>
-        </Container>
-      </main>
-      <Footer />
-    </>
+    <RouterProvider router={routers} />
   );
 }
 
