@@ -1,0 +1,12 @@
+main {
+  min-height: 80vh;
+}
+
+a{
+  text-decoration: none;
+  text-align: center;
+}
+
+strong{
+  font-size: 18px;
+}
